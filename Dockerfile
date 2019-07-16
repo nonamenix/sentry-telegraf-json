@@ -21,7 +21,7 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build
 FROM alpine:3.7
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
-COPY --from=builder /app/sentry2prometheus /root
+COPY --from=builder /app/sentry-telegraf-json /root
 COPY --from=builder /app/entrypoint.sh /root
 RUN ls -la /root
 EXPOSE 9412
