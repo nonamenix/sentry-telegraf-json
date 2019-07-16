@@ -2,11 +2,9 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"net/http"
-	"time"
-
-	flag "github.com/spf13/pflag"
 )
 
 type Project struct {
@@ -24,7 +22,6 @@ type Config struct {
 	statsPeriod        string
 	query              string
 	authorizationToken string
-	timeout            time.Duration
 }
 
 type Metric struct {
